@@ -1,4 +1,4 @@
-# github-streak-log
+# Github streak log
 This repo helps me track daily commits for my coding streak.
 
 # Day 1 – 2025‑07‑31 – Two Sum Problem  
