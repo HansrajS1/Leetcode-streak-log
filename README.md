@@ -5,3 +5,6 @@ This repo helps me track daily commits for my coding streak.
 
 ➤ Today I wrote a simple Two Sum Problem Soluton.Brute-force solution in Java to find two indices whose values sum up to the target.
 
+# Day 2 – 2025‑08‑01 – Merge Sorted Array Problem
+
+➤ Today I implemented a simple in-place merge solution for the Merge Sorted Array problem.
