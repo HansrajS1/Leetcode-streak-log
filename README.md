@@ -8,3 +8,7 @@ This repo helps me track daily commits for my coding streak.
 # Day 2 – 2025‑08‑01 – Merge Sorted Array Problem
 
 ➤ Today I implemented a simple in-place merge solution for the Merge Sorted Array problem.
+
+# Day 3 – 2025‑08‑02 – Pascal's Triangle II 
+
+➤ Today I implemented a space-optimized solution to generate a specific row of Pascal's Triangle using Java.
