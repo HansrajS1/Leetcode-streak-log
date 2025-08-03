@@ -16,11 +16,12 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT }}
 
-      - name: Create and switch to a new branch
+      - name: Create and push leetcode-sync-temp branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b leetcode-sync-temp
+          git push origin leetcode-sync-temp  # ✅ Push it *before* syncing
 
       - name: Sync LeetCode to GitHub
         uses: joshcai/leetcode-sync@v1.7
@@ -32,6 +33,6 @@ jobs:
           verbose: true
           commit-header: '[LeetCode Sync]'
 
-      - name: Push new branch to remote
+      - name: Final push after sync
         run: |
           git push origin leetcode-sync-temp
