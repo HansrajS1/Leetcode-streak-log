@@ -1,9 +1,9 @@
-name: Sync LeetCode Submissions
+name: Daily LeetCode Sync
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '0 8 * * *'  # daily at 8 AM UTC
+    - cron: '0 18 * * *' 
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -11,13 +11,29 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
+
     steps:
+      - name: Checkout main
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Create and push leetcode-sync-temp branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b leetcode-sync-temp || git checkout leetcode-sync-temp
+          git push origin leetcode-sync-temp
+
       - name: Sync LeetCode to GitHub
         uses: joshcai/leetcode-sync@v1.7
         with:
-          github-token: ${{ secrets.GH_PAT }}  # ✅ DO NOT use GITHUB_TOKEN
+          github-token: ${{ secrets.GH_PAT }}
           leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
           destination-folder: submissions
           verbose: true
           commit-header: '[LeetCode Sync]'
+
+      - name: Final push after sync
+        run: git push origin leetcode-sync-temp
