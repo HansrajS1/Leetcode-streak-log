@@ -1,4 +1,4 @@
-name: Full LeetCode Sync
+name: Manual LeetCode Full Sync
 
 on:
   workflow_dispatch:
@@ -11,17 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout main branch
+      - name: Checkout main
         uses: actions/checkout@v3
         with:
+          ref: main
           token: ${{ secrets.GH_PAT }}
-
-      - name: Create and push leetcode-sync-temp branch
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout -b leetcode-sync-temp
-          git push origin leetcode-sync-temp  # ✅ Push it *before* syncing
 
       - name: Sync LeetCode to GitHub
         uses: joshcai/leetcode-sync@v1.7
@@ -31,8 +25,4 @@ jobs:
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
           destination-folder: submissions
           verbose: true
-          commit-header: '[LeetCode Sync]'
-
-      - name: Final push after sync
-        run: |
-          git push origin leetcode-sync-temp
+          commit-header: '[Manual LeetCode Sync]'
