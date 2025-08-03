@@ -11,10 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout (create if not exists)
+      - name: Checkout default branch
         uses: actions/checkout@v3
         with:
-          ref: leetcode-sync-temp   # ✅ Push to this branch
           token: ${{ secrets.GH_PAT }}
 
       - name: Sync LeetCode to GitHub
@@ -24,5 +23,6 @@ jobs:
           leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
           destination-folder: submissions
+          commit-branch: leetcode-sync-temp 
           verbose: true
           commit-header: '[LeetCode Sync]'
