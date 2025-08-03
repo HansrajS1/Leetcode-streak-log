@@ -11,8 +11,8 @@ All synced solutions are saved in the [`submissions/`](./submissions) directory,
 ---
 
 ### ⏱️ Sync Status
+[![LeetCode Sync](https://github.com/HansrajS1/Github-streak-log/actions/workflows/leetcode-sync.yml/badge.svg)](https://github.com/HansrajS1/Github-streak-log/actions/workflows/leetcode-sync.yml)
 
-![LeetCode Sync](https://github.com/HansrajS1/Github-streak-log/actions/workflows/leetcode-sync.yml/badge.svg)
 
 - **Workflow**: [leetcode-sync.yml](.github/workflows/leetcode-sync.yml)
 - **Runs At**: 11:30 PM IST daily
