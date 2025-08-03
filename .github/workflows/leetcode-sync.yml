@@ -2,7 +2,7 @@ name: Daily LeetCode Sync
 
 on:
   schedule:
-    - cron: '0 18 * * *' 
+    - cron: '59 17 * * *'
   workflow_dispatch:
 
 permissions:
@@ -13,17 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout main
+      - name: Checkout main branch
         uses: actions/checkout@v3
         with:
+          ref: main
           token: ${{ secrets.GH_PAT }}
-
-      - name: Create and push leetcode-sync-temp branch
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout -b leetcode-sync-temp || git checkout leetcode-sync-temp
-          git push origin leetcode-sync-temp
 
       - name: Sync LeetCode to GitHub
         uses: joshcai/leetcode-sync@v1.7
@@ -34,6 +28,3 @@ jobs:
           destination-folder: submissions
           verbose: true
           commit-header: '[LeetCode Sync]'
-
-      - name: Final push after sync
-        run: git push origin leetcode-sync-temp
