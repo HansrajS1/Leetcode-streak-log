@@ -1,6 +1,8 @@
-name: Manual LeetCode Full Sync
+name: Daily LeetCode Sync
 
 on:
+  schedule:
+    - cron: '59 17 * * *'
   workflow_dispatch:
 
 permissions:
@@ -11,11 +13,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout main
+      - name: Checkout main branch
         uses: actions/checkout@v3
         with:
           ref: main
           token: ${{ secrets.GH_PAT }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set Git Identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Sync LeetCode to GitHub
         uses: joshcai/leetcode-sync@v1.7
@@ -25,4 +34,4 @@ jobs:
           leetcode-session: ${{ secrets.LEETCODE_SESSION }}
           destination-folder: submissions
           verbose: true
-          commit-header: '[Manual LeetCode Sync]'
+          commit-header: '[LeetCode Sync]'
