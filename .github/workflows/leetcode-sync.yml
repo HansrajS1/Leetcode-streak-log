@@ -2,7 +2,8 @@ name: Daily LeetCode Sync
 
 on:
   schedule:
-    - cron: '59 17 * * *'
+    - cron: '0 6 * * *'   
+    - cron: '0 18 * * *'  
   workflow_dispatch:
 
 permissions:
