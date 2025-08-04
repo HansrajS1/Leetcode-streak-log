@@ -1,8 +1,6 @@
-name: Daily LeetCode Sync
+name: Manual LeetCode Sync
 
 on:
-  schedule:
-    - cron: '59 17 * * *'
   workflow_dispatch:
 
 permissions:
