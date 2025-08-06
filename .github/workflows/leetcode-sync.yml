@@ -1,8 +1,7 @@
 name: Daily LeetCode Sync
 
 on:
-  schedule:
-    - cron: '0 6 * * *'   
+  schedule:  
     - cron: '0 18 * * *'  
   workflow_dispatch:
 
