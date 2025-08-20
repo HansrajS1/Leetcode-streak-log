@@ -15,8 +15,7 @@ All synced solutions are saved in the [`submissions/`](./submissions) directory,
 
 
 - **Workflow**: [leetcode-sync.yml](.github/workflows/leetcode-sync.yml)
-- **Runs At**: 11:30 PM IST daily
-- **Last Status**: See badge above ☝️
+- **Runs At**: 6:00 PM IST daily
 
 ---
 If you'd like a similar setup, feel free to fork this repo or reach out!
