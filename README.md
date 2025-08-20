@@ -1,6 +1,6 @@
 # 🚀 LeetCode Daily Sync
 
-Automatically syncs all my accepted LeetCode submissions every day at **11:30 PM IST** to this repository using [GitHub Actions](https://github.com/features/actions).
+Automatically syncs all my accepted LeetCode submissions every day at **6:00 PM IST** to this repository using [GitHub Actions](https://github.com/features/actions).
 
 ---
 
