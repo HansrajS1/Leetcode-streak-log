@@ -1,6 +1,6 @@
 # 🚀 LeetCode Daily Sync
 
-Automatically syncs all my accepted LeetCode submissions every day at **6:00 PM IST** to this repository using [GitHub Actions](https://github.com/features/actions).
+Automatically syncs all my accepted LeetCode submissions every day at **11:30 PM IST** to this repository using [GitHub Actions](https://github.com/features/actions).
 
 ---
 
@@ -15,7 +15,7 @@ All synced solutions are saved in the [`submissions/`](./submissions) directory,
 
 
 - **Workflow**: [leetcode-sync.yml](.github/workflows/leetcode-sync.yml)
-- **Runs At**: 6:00 PM IST daily
+- **Runs At**: 11:30 PM IST daily
 
 ---
 If you'd like a similar setup, feel free to fork this repo or reach out!
