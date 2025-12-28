@@ -41,6 +41,5 @@ class Solution {
         root.left = buildBST(head, slow);
         root.right = buildBST(slow.next, tail);
         return root;
-
     }
 }
