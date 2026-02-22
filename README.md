@@ -1,16 +1,16 @@
-# 🚀 LeetCode Daily Sync
+# LeetCode Daily Sync
 
 Automatically syncs all my accepted LeetCode submissions every day at **11:30 PM IST** to this repository using [GitHub Actions](https://github.com/features/actions).
 
 ---
 
-### 📦 Submissions Folder
+### Submissions Folder
 
 All synced solutions are saved in the [`submissions/`](./submissions) directory, organized by problem title.
 
 ---
 
-### ⏱️ Sync Status
+### Sync Status
 [![LeetCode Sync](https://github.com/HansrajS1/Github-streak-log/actions/workflows/leetcode-sync.yml/badge.svg)](https://github.com/HansrajS1/Github-streak-log/actions/workflows/leetcode-sync.yml)
 
 
